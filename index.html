@@ -63,15 +63,6 @@
             </svg>
             <span style="letter-spacing: 1px;">ABM</span>
         </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-link active">HOME</a></li>
-            <li><a href="#about" class="nav-link">ABOUT</a></li>
-            <li><a href="#services" class="nav-link">SKILLS</a></li>
-            <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-            <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
-            <li><a href="#certificates" class="nav-link">CERTIFICATES</a></li>
-            <li><a href="#contact" class="nav-link">CONTACT</a></li>
-        </ul>
         <div class="nav-actions">
             <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Theme">◐</button>
             <button class="icon-btn terminal-btn" id="terminalBtn" title="Terminal Mode">&gt;_</button>
@@ -83,6 +74,18 @@
             <span></span><span></span><span></span>
         </button>
     </nav>
+
+    <!-- Global Navigation Overlay (Moved outside navbar for correct fixed positioning) -->
+    <ul class="nav-links" id="navLinks">
+        <li class="nav-close-wrap"><button class="nav-close" id="navClose">✕ BACK</button></li>
+        <li><a href="#home" class="nav-link active">HOME</a></li>
+        <li><a href="#about" class="nav-link">ABOUT</a></li>
+        <li><a href="#services" class="nav-link">SKILLS</a></li>
+        <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+        <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+        <li><a href="#certificates" class="nav-link">CERTIFICATES</a></li>
+        <li><a href="#contact" class="nav-link">CONTACT</a></li>
+    </ul>
 
     <!-- ═══════════════════════ HERO ═══════════════════════ -->
     <section id="home" class="hero">

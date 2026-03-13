@@ -343,6 +343,12 @@ if (hamburgerBtn && navLinksEl) {
         navLinksEl.classList.remove('open');
         document.body.style.overflow = 'auto';
     }));
+
+    document.getElementById('navClose')?.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        navLinksEl.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    });
 }
 document.getElementById('backTop')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
