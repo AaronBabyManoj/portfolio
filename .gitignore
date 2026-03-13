@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.bevel/
+.vscode/
+.antigravity/
+.gemini/
+node_modules/
+.DS_Store
+.env

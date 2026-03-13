@@ -5,7 +5,7 @@ from cachetools import cached, TTLCache
 from datetime import datetime, timedelta
 
 app = Flask(__name__)
-# Allow CORS so the browser can fetch from localhost:5000
+# Allow CORS so the browser can fetch if needed
 CORS(app)
 
 # Cache NVD for 5 minutes (300 sec)
@@ -84,8 +84,3 @@ def lookup_ip(ip):
         return jsonify(res.json())
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-if __name__ == '__main__':
-    print("🚀 Starting SOC Backend on http://localhost:5000")
-    # Run slightly restricted threaded server
-    app.run(host='0.0.0.0', port=5000, threaded=True)
