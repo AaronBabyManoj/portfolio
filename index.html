@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaron Baby Manoj — Cybersecurity Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Aaron Baby Manoj — Aspiring Cybersecurity Professional specializing in Network Security, Digital Forensics, and Vulnerability Assessment." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://formsubmit.co;">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollBar"></div>
+
+    <!-- ═══════════════════════ PREMIUM LOADER ═══════════════════════ -->
+    <div id="loader" class="loader-cyber">
+        <canvas id="loaderCanvas" class="loader-bg-canvas"></canvas>
+        <div class="loader-content">
+            <div class="nexus-wrap">
+                <div class="nexus-core">
+                    <div class="nexus-ring"></div>
+                    <div class="nexus-ring"></div>
+                    <div class="nexus-ring"></div>
+                    <div class="nexus-scan"></div>
+                </div>
+                <div class="nexus-glow"></div>
+            </div>
+
+            <div class="loader-info">
+                <div class="loader-title">SYSTEM_INITIALIZATION</div>
+                <div class="status-terminal" id="statusTerminal">
+                    <div class="status-line">> BOOT_SEQUENCE: LOADED</div>
+                </div>
+                <div class="loader-progress-wrap">
+                    <div class="loader-bar-fill" id="loaderBar"></div>
+                    <div class="loader-pct" id="loaderPct">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">
+            <svg class="custom-logo" viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="rgba(255,94,0,0.1)" stroke="var(--orange)"
+                    stroke-width="8" stroke-linejoin="round" />
+                <path d="M50 25 L50 75 M25 50 L75 50" stroke="var(--orange)" stroke-width="8" stroke-linecap="round" />
+                <circle cx="50" cy="50" r="12" fill="var(--orange)" />
+            </svg>
+            <span style="letter-spacing: 1px;">ABM</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">HOME</a></li>
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#services" class="nav-link">SKILLS</a></li>
+            <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+            <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+            <li><a href="#certificates" class="nav-link">CERTIFICATES</a></li>
+            <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Theme">◐</button>
+            <button class="icon-btn terminal-btn" id="terminalBtn" title="Terminal Mode">&gt;_</button>
+            <button class="icon-btn game-nav-btn" id="gameNavBtn" title="Play Snake Game">🎮</button>
+            <a href="Aaron_Resume_ (4).pdf" class="btn-cv magnetic-btn" download="Aaron_Baby_Manoj_Resume.pdf">DOWNLOAD
+                CV</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section id="home" class="hero">
+        <!-- 3D Background Canvas specifically for Hero -->
+        <canvas id="bg3d"></canvas>
+
+        <canvas class="hero-particles" id="particleCanvas"></canvas>
+        <div class="hero-spotlight" id="heroSpotlight"></div>
+
+        <!-- Giant BG text -->
+        <div class="hero-text-wrap">
+            <div class="hero-line hero-line1">
+                <span class="hero-word">I'M A</span>
+                <span class="hero-role" id="scrambleText">CYBER</span>
+            </div>
+            <div class="hero-line hero-line2">
+                <span class="hero-word">ENGINEER</span>
+            </div>
+        </div>
+
+
+        <!-- Orange accent decorations -->
+        <div class="hero-deco deco-star1">✦</div>
+        <div class="hero-deco deco-star2">✦</div>
+        <div class="hero-deco deco-cross1">+</div>
+        <div class="hero-deco deco-cross2">+</div>
+        <div class="hero-deco deco-block1"></div>
+        <div class="hero-deco deco-block2"></div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-badge" id="scrollBadge">
+            <div class="scroll-inner-num">0</div>
+            <svg class="scroll-ring-svg" viewBox="0 0 120 120">
+                <path id="scrollRingPath" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0" />
+                <text class="scroll-ring-text">
+                    <textPath href="#scrollRingPath">SCROLL DOWN • SCROLL DOWN • </textPath>
+                </text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+    <section id="about" class="about">
+        <div class="about-inner">
+            <div class="about-text">
+                <p class="about-hello reveal-up">HELLO</p>
+                <h2 class="about-name reveal-scale">I'M <span class="accent">AARON BABY MANOJ</span></h2>
+                <p class="about-bio reveal-up">Aspiring Cybersecurity professional with a strong foundation in network
+                    security, digital forensics, and vulnerability assessment. Skilled in Nmap, Wireshark, Autopsy, Burp
+                    Suite and more. Experienced in AI-based security solutions and published researcher. Passionate
+                    about improving cyber resilience through continuous learning.</p>
+                <div class="stats-list reveal-stagger">
+                    <div class="stat-row reveal-pop">
+                        <div class="stat-check">✓</div>
+                        <div class="stat-body">
+                            <div class="stat-num-wrap"><span class="count-up" data-target="8">0</span><span
+                                    class="accent">+</span></div>
+                            <p>Certificates</p>
+                        </div>
+                    </div>
+                    <div class="stat-row reveal-pop">
+                        <div class="stat-check">✓</div>
+                        <div class="stat-body">
+                            <div class="stat-num-wrap"><span class="count-up" data-target="15">0</span><span
+                                    class="accent">+</span></div>
+                            <p>Security Tools Mastered</p>
+                        </div>
+                    </div>
+                    <div class="stat-row reveal-pop">
+                        <div class="stat-check">✓</div>
+                        <div class="stat-body">
+                            <div class="stat-num-wrap"><span class="count-up" data-target="1">0</span><span
+                                    class="accent"></span></div>
+                            <p>Research Publication (IJCRT)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+    <section id="services" class="skills">
+        <div class="section-head reveal-scale">
+            <span class="section-tag">WHAT I DO</span>
+            <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        </div>
+        <div class="skills-grid reveal-stagger">
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🔒</div>
+                <h3>Network Security</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="85"></div>
+                </div>
+                <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🕵️</div>
+                <h3>Digital Forensics</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="82"></div>
+                </div>
+                <span class="skill-pct">82%</span>
+            </div>
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🐛</div>
+                <h3>Vulnerability Assessment</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="70"></div>
+                </div>
+                <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🐧</div>
+                <h3>Linux Administration</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="78"></div>
+                </div>
+                <span class="skill-pct">78%</span>
+            </div>
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🤖</div>
+                <h3>AI-Based Security</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="72"></div>
+                </div>
+                <span class="skill-pct">72%</span>
+            </div>
+            <div class="skill-card reveal-pop">
+                <div class="skill-icon">🐍</div>
+                <h3>Python / Scripting</h3>
+                <div class="skill-track">
+                    <div class="skill-fill" data-w="65"></div>
+                </div>
+                <span class="skill-pct">65%</span>
+            </div>
+        </div>
+        <div class="tech-chips reveal-up reveal-stagger">
+            <span class="chip reveal-pop">Nmap</span><span class="chip reveal-pop">Wireshark</span><span
+                class="chip reveal-pop">Autopsy</span>
+            <span class="chip reveal-pop">Burp Suite</span><span class="chip reveal-pop">OWASP ZAP</span><span
+                class="chip reveal-pop">SQLMap</span>
+            <span class="chip reveal-pop">Kali Linux</span><span class="chip reveal-pop">Hydra</span><span
+                class="chip reveal-pop">WPScan</span>
+            <span class="chip reveal-pop">The Sleuth Kit</span><span class="chip reveal-pop">Recon-ng</span><span
+                class="chip reveal-pop">theHarvester</span>
+            <span class="chip reveal-pop">HTTrack</span><span class="chip reveal-pop">HxD / 010 Editor</span><span
+                class="chip reveal-pop">Python</span>
+            <span class="chip reveal-pop">Shell Scripting</span><span class="chip reveal-pop">VirtualBox</span><span
+                class="chip reveal-pop">Google
+                Dorks</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+    <section id="projects" class="projects">
+        <div class="section-head reveal-scale">
+            <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        </div>
+        <div class="proj-filters reveal-up">
+            <button class="filter-btn active" data-filter="all">All <span class="fbadge">2</span></button>
+            <button class="filter-btn" data-filter="dev">Development <span class="fbadge">1</span></button>
+            <button class="filter-btn" data-filter="research">Research <span class="fbadge">1</span></button>
+        </div>
+        <div class="projects-grid reveal-stagger">
+            <div class="proj-card tilt-card reveal-pop" data-cat="dev">
+                <div class="proj-img img-ai">
+                    <div class="proj-mockup">
+                        <div class="mock-bar"><span></span><span></span><span></span></div>
+                        <div class="mock-graph"></div>
+                    </div>
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">AI Security · Jan–Mar 2025</span>
+                    <h3>AI-Based Firewall for Prompt Filtering</h3>
+                    <p>Collaborated in a 4-member team to develop an AI-powered firewall using local LLMs. Implemented
+                        real-time prompt filtering to detect and block harmful or policy-violating queries, with
+                        dashboards for tracking security trends.</p>
+                    <div class="proj-links">
+                        <a href="ReThink.pdf#toolbar=0" target="_blank" rel="noopener noreferrer" class="proj-link">View
+                            Details →</a>
+                        <a href="https://github.com/AaronBabyManoj/ai_firewall" target="_blank"
+                            rel="noopener noreferrer" class="proj-link outline">GitHub →</a>
+                    </div>
+                </div>
+                <div class="card-glare"></div>
+            </div>
+            <div class="proj-card tilt-card reveal-pop" data-cat="research">
+                <div class="proj-img img-crypto">
+                    <div class="proj-mockup">
+                        <div class="mock-bar"><span></span><span></span><span></span></div>
+                        <div class="mock-chart"></div>
+                    </div>
+                </div>
+                <div class="proj-body">
+                    <span class="proj-tag">Research · IJCRT Publication</span>
+                    <h3>IoMT-Based Embedded Systems Security</h3>
+                    <p>Published research on advancing security in IoMT-based embedded systems — from classical
+                        cryptography to dynamic key-based steganography. Published in the International Journal of
+                        Creative Research Thoughts (IJCRT).</p>
+                    <div class="proj-links">
+                        <a href="IJCRT_Paper.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            class="proj-link">Read Paper →</a>
+                    </div>
+                </div>
+                <div class="card-glare"></div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ EXPERIENCE ═══════════════════════ -->
+    <section id="experience" class="experience">
+        <div class="section-head reveal">
+            <span class="section-tag">MY JOURNEY</span>
+            <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="tl-item tl-left reveal-pop">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-year">Jan 2025 — Mar 2025</span>
+                    <h3>Cybersecurity Project Contributor</h3>
+                    <p class="tl-company">AI-Based Firewall for Prompt Filtering</p>
+                    <ul class="resume-list">
+                        <li>Collaborated in a 4-member team to develop an AI-powered firewall using local LLMs</li>
+                        <li>Implemented prompt filtering to detect and block harmful or policy-violating queries in real
+                            time</li>
+                        <li>Assisted in analyzing flagged prompts and documenting remediation and compliance
+                            considerations</li>
+                        <li>Contributed to dashboards and summaries for tracking security trends and blocked queries
+                        </li>
+                        <li>Participated in testing, debugging, and writing structured technical documentation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tl-item tl-left reveal-pop">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-year">Ongoing</span>
+                    <h3>RHCSA Training</h3>
+                    <p class="tl-company">Red Hat Linux Administration</p>
+                    <ul class="resume-list">
+                        <li>Currently pursuing training covering Linux system administration including user and
+                            permission management, system services, storage management, networking configuration,
+                            package management, and troubleshooting based on the RHCSA curriculum.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tl-item tl-right reveal-pop">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-year">Ongoing</span>
+                    <h3>CompTIA CySA+ Training</h3>
+                    <p class="tl-company">Cybersecurity Analyst</p>
+                    <ul class="resume-list">
+                        <li>Currently pursuing training to achieve the CompTIA Cybersecurity Analyst (CySA+)
+                            certification, focusing on behavioral analytics, threat intelligence, and vulnerability
+                            management.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tl-item tl-right reveal-pop">
+                <div class="tl-dot"></div>
+                <div class="tl-card">
+                    <span class="tl-year">2022 — 2026</span>
+                    <h3>B.Tech — Computer Science & Engineering (Cybersecurity)</h3>
+                    <p class="tl-company">St. Joseph's College of Engineering & Technology, Kerala</p>
+                    <p>Relevant coursework: Cryptography, Computer Networks, System Network Security,
+                        Ethical Hacking, Cyber Law (IT Act 2000, Cyber Offences, Digital Evidence).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════ CERTIFICATES ═══════════════════════ -->
+    <section id="certificates" class="certificates">
+        <div class="section-head reveal-scale">
+            <span class="section-tag">MY ACHIEVEMENTS</span>
+            <h2 class="section-title">Professional <span class="accent">Certificates</span></h2>
+        </div>
+        <div class="cert-grid reveal-stagger">
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">🏆</div>
+                <div class="cert-info">
+                    <h3><a href="Foundations of Cybersecurity.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Foundations of Cybersecurity</a></h3>
+                    <p>Google</p>
+                </div>
+            </div>
+
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">🌐</div>
+                <div class="cert-info">
+                    <h3><a href="Intro to Packet Tracer.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='inherit'">Intro
+                            to Packet Tracer</a></h3>
+                    <p>Cisco Networking Academy</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">🔐</div>
+                <div class="cert-info">
+                    <h3><a href="Ethical Hacker.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Ethical Hacker</a></h3>
+                    <p>Cisco Networking Academy</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">📡</div>
+                <div class="cert-info">
+                    <h3><a href="Network Analysis Using Wireshark 3.pdf#toolbar=0" target="_blank"
+                            rel="noopener noreferrer" style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Network Analysis Using Wireshark 3</a></h3>
+                    <p>Infosys Springboard</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">🤖</div>
+                <div class="cert-info">
+                    <h3><a href="google jam.jpg" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Gen AI Study Jams</a></h3>
+                    <p>Google Cloud</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">💼</div>
+                <div class="cert-info">
+                    <h3><a href="Delloitte_certificate.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Cybersecurity Job Simulation</a></h3>
+                    <p>Deloitte Australia (Forage)</p>
+                </div>
+            </div>
+            <div class="cert-card reveal-pop">
+                <div class="cert-icon">💳</div>
+                <div class="cert-info">
+                    <h3><a href="Mastercard_certificate.pdf#toolbar=0" target="_blank" rel="noopener noreferrer"
+                            style="color: inherit; text-decoration: none;"
+                            onmouseover="this.style.color='var(--orange)'"
+                            onmouseout="this.style.color='inherit'">Cybersecurity Job Simulation</a></h3>
+                    <p>Mastercard (Forage)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section id="contact" class="contact">
+
+
+        <div class="contact-inner">
+            <div class="contact-left reveal-left">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Let's <span class="accent">Connect</span><br>&amp; Collaborate</h2>
+                <p>Open to cybersecurity opportunities, collaborations, and research projects. Let's build a more secure
+                    digital world together!</p>
+                <div class="contact-details">
+                    <p>📧 <a href="mailto:aaronmanoj2004@gmail.com">aaronmanoj2004@gmail.com</a></p>
+                    <p>📍 Kerala, India</p>
+                </div>
+                <div class="social-row">
+                    <a href="https://linkedin.com/in/aaron-baby-manoj-a1434025a" target="_blank"
+                        rel="noopener noreferrer" class="social-pill" title="LinkedIn">LinkedIn</a>
+
+                </div>
+            </div>
+            <form action="https://formsubmit.co/aaronmanoj2004@gmail.com" method="POST"
+                class="contact-form reveal-right" id="contactForm">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="field-wrap">
+                    <input type="text" id="fname" name="Name" placeholder=" " required maxlength="100" />
+                    <label for="fname">Your Name</label>
+                </div>
+                <div class="field-wrap">
+                    <input type="email" id="femail" name="Email" placeholder=" " required maxlength="100" />
+                    <label for="femail">Your Email</label>
+                </div>
+                <div class="field-wrap">
+                    <input type="tel" id="fphone" name="Contact Number" placeholder=" " required
+                        pattern="^\+?[0-9\s\-]{7,20}$" title="Please enter a valid phone number" maxlength="20" />
+                    <label for="fphone">Contact Number</label>
+                </div>
+                <div class="field-wrap">
+                    <textarea id="fmsg" name="Message" placeholder=" " rows="4" required maxlength="1000"></textarea>
+                    <label for="fmsg">Your Message</label>
+                </div>
+                <button type="submit" class="btn-submit magnetic-btn">
+                    <span class="btn-text">SEND MESSAGE</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <a href="#home" class="footer-logo">
+                <svg class="custom-logo" viewBox="0 0 100 100" width="32" height="32"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5 L90 25 L90 75 L50 95 L10 75 L10 25 Z" fill="rgba(255,94,0,0.1)"
+                        stroke="var(--orange)" stroke-width="8" stroke-linejoin="round" />
+                    <path d="M50 25 L50 75 M25 50 L75 50" stroke="var(--orange)" stroke-width="8"
+                        stroke-linecap="round" />
+                    <circle cx="50" cy="50" r="12" fill="var(--orange)" />
+                </svg>
+                <span style="letter-spacing: 1px;">ABM</span>
+            </a>
+            <p class="footer-copy">© 2026 Aaron Baby Manoj. Crafted with ❤️ &amp; lots of ☕</p>
+            <a href="#contact" class="footer-cta">Hire Me →</a>
+        </div>
+        <button class="back-top" id="backTop" title="Back to top">🚀</button>
+    </footer>
+
+
+
+    <!-- ═══════════════════════ TERMINAL ═══════════════════════ -->
+    <div class="terminal-overlay" id="terminalOverlay">
+        <div class="terminal-win">
+            <div class="term-titlebar">
+                <div class="term-dots">
+                    <span class="tdot tdot-r"></span>
+                    <span class="tdot tdot-y"></span>
+                    <span class="tdot tdot-g"></span>
+                </div>
+                <span class="term-title">aaron@portfolio: ~</span>
+                <button class="term-close" id="termClose">✕</button>
+            </div>
+            <div class="term-body" id="termBody">
+                <div class="term-welcome">
+                    <pre class="term-ascii">
+  ____  ____  ____  ____  __  ____  ____  __     __  ____ 
+ /  _ \/  _ \/  __\/  __\/  \/  __\/  _ \/  \   /  \/  _ \
+ ) __/) __/) ) _) ) ) _) ) \) _) ) /_\ ) |  \_/   )) |  )
+ \___)\___)\_____/\_____)\__/\____)\____/\___/ \_/\_/\_/\_/
+          </pre>
+                    <p style="color:#F97316">✦ Welcome to Aaron's Portfolio Terminal v1.0</p>
+                    <p>Type <span style="color:#F97316;font-weight:700">help</span> to see all available commands.</p>
+                    <br />
+                </div>
+            </div>
+            <div class="term-input-row">
+                <span class="term-prompt">aaron@portfolio:~$ </span>
+                <input type="text" class="term-in" id="termIn" autocomplete="off" spellcheck="false"
+                    aria-label="Terminal input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════ SNAKE GAME ═══════════════════════ -->
+    <div class="game-overlay" id="gameOverlay">
+        <div class="game-win">
+            <div class="game-head">
+                <span>🐍 Snake</span>
+                <span id="scoreDisplay">Score: <b id="snakeScore">0</b> | Best: <b id="snakeBest">0</b></span>
+                <button class="game-x" id="gameX">✕</button>
+            </div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div class="game-ctrls">
+                <p>Arrow keys or WASD to move</p>
+                <button class="btn-game" id="gameStart">▶ START GAME</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
